@@ -26,8 +26,17 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 #### Enable `Issues` feature
 * Go to your GitHub forked repository
 * Go to `Settings` tab
-* On `General` page scroll down to `Features` block
+* On `General` page, scroll down to `Features` block
 * Check `Issues` option
+
+#### Configure default issue Assignee
+* Go to your GitHub forked repository
+* Go to `Settings` tab
+* On `General` page, scroll down to `Features` block
+* Click `Set up templates` button on `Issues` area
+* Select `Preview and edit` button for `Bug` template and click pencil button near the `Issue: Bug` template name
+* Scroll to the bottom of template to `Assignees` section and click `assign yourself` link or choose yourself from dropdown
+* Do the same with `Feature` template
 
 #### Set up your deployment
 * Go to your GitHub forked repository
@@ -43,10 +52,10 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 * Add branch protection rule by clicking button `Add branch protection rule`
 * Set branch name patter as `master`
 * Check `Require a pull request before merging` option and `Dismiss stale pull request approvals when new commits are pushed` in the same block
+* Click `Create` at the page bottom
 
 
 ### Workflow
-
 * Get a ticket from your mentor
 * Create a working branch with template `implementation/{your_ticket}`
 * [Pull changes](#how-to-fetch-changes-from-parent-repositorys-specific-branch) from specific branch in parent repository (if provided)
@@ -58,7 +67,6 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 
 
 ### Pull requests ###
-
 * After you fully-implement one of classes, you can create a Pull-request to check your implementation with JUnit tests.
 * Choose your working branch and `master` branch as target.
 * Add all mentors as a reviewers.
@@ -67,7 +75,6 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 
 
 ### How to fetch changes from parent repository's specific branch
-
 * Go to your GitHub forked repository
 * Choose `Pull requests` tab
 * Click `New pull request` button
@@ -78,12 +85,10 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 
 
 > ##### Where I should start?
->
 > Check `team.asd.service.IsConverterService`. It's a good point to start. Create a class in your own package with name `ConverterService` and try to implement all methods from the interface. Then check your implementation with requirements (javadocs) and make first commit. Push your changes and try to make a PR.
 
 
 ### Additional information ###
-
 * You should NOT change any interface.
 * No need to create own implementations for all interfaces at one. Do it step by step, class by class. Go ahead to the next interface implementation after tests will pass for the previous.
 * You can create own JUnit tests to check your services.
