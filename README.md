@@ -1,42 +1,85 @@
-# README #
+# README
 
 This project was designed for Internship process to help each intern to achieve certain skills with specific tools/technologies. 
 
-### What is this repository for? ###
+### What is this repository for?
 
 * To train your skills
 * To learn you some specifics in practice
 * To show you how to work with GIT and review process
 
-### How do I get set up? ###
+### How to set up project?
 
-Environment: Linux/MacOS, Java 8, Maven, GIT, IDEA
+Setup environment: Linux/MacOS, Java 8, Maven, GIT, IDEA
+<br>
+Fork [this](https://github.com/rdovgan/asd-java-intern) repository
+<br>
+Configure GitHub Action
 <br>
 Configure Code Style Scheme for IDEA with [template](data/idea-formatter.xml) in `/data` project folder
 <br>
 Change default maven user setting file to [provided](data/nexus-settings.xml) in `/data` project folder to use Nexus repository
 
-### Workflow ###
 
-* Create a personal working branch with template `implementation/{your_surname}`. 
-* Create a package with your surname for implementation. For example, for `services` implementation you should create directory: `team.asd.service.{your_surname}`.
-* Implement an interface in your package. You can commit your changes per implemented method or by implemented class. *But do not several class implementation into one commit.*
-* Before or after you made a commit, pull changes from `master` branch. This is a required step.
+### Set up your repository
 
-**All your changes should be committed only in your working branch.**
+#### Enable `Issues` feature
+* Go to your GitHub forked repository
+* Go to `Settings` tab
+* On `General` page scroll down to `Features` block
+* Check `Issues` option
 
-> ##### Where I should start?
->
-> Check `team.asd.service.IsConverterService`. It's a good point to start. Create a class in your own package with name `ConverterService` and try to implement all methods from the interface. Then check your implementation with requirements (javadocs) and make first commit. Push your changes and try to make a PR.
+#### Set up your deployment
+* Go to your GitHub forked repository
+* Choose `Action` tab
+* Find `Java with Maven` configuration option and click `Configure`
+* Check script workflow but do not change anything
+* Press `Start commit` and commit directly to the master branch
+
+#### Protect your `master` branch
+* Go to your GitHub forked repository
+* Choose `Settings` tab
+* Go to `Branches` item in `Code and automation` block
+* Add branch protection rule by clicking button `Add branch protection rule`
+* Set branch name patter as `master`
+* Check `Require a pull request before merging` option and `Dismiss stale pull request approvals when new commits are pushed` in the same block
+
+
+### Workflow
+
+* Get a ticket from your mentor
+* Create a working branch with template `implementation/{your_ticket}`
+* [Pull changes](#how-to-fetch-changes-from-parent-repositorys-specific-branch) from specific branch in parent repository (if provided)
+* Implement an interface in `service` package
+* Commit your changes per implemented method or by implemented class. *But do not combine several class implementation into one commit*
+* Before you make a commit and after, fetch changes from parent repository's `master` branch. This is a required step
+
+**All your changes should be committed only in your working branch. Do not use master branch for direct commits. Add your changes only by pull requests**
+
 
 ### Pull requests ###
 
 * After you fully-implement one of classes, you can create a Pull-request to check your implementation with JUnit tests.
-* Choose your working branch and `test` branch as target.
+* Choose your working branch and `master` branch as target.
 * Add all mentors as a reviewers.
-* Wait for a build result and check Slack channel or Pipeline tab in BitBucket.
-* After at least one approval, you can merge your PR.
+* Wait for a build result or check email or Action tab in GitHub.
+* After at least one approval from mentor, you can merge your PR.
 
+
+### How to fetch changes from parent repository's specific branch
+
+* Go to your GitHub forked repository
+* Choose `Pull requests` tab
+* Click `New pull request` button
+![Fetch branch from parent repository](data/pull_parent_branch.png?raw=true "Fetch branch from parent repository")
+* Click `compare actoss forks` link (1)
+* Choose your repository and branch (not `master`) as a base and parent repository with specific branch as a head (2)
+* Create and merge a pull request (3)
+
+
+> ##### Where I should start?
+>
+> Check `team.asd.service.IsConverterService`. It's a good point to start. Create a class in your own package with name `ConverterService` and try to implement all methods from the interface. Then check your implementation with requirements (javadocs) and make first commit. Push your changes and try to make a PR.
 
 
 ### Additional information ###
