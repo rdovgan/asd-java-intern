@@ -19,7 +19,7 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 ### Workflow ###
 
 * Create a personal working branch with template `implementation/{your_surname}`. 
-* Create a package with your surname for implementation. For example, for `services` implementation you should create directory: `team.asd.services.{your_surname}`.
+* Create a package with your surname for implementation. For example, for `services` implementation you should create directory: `team.asd.service.{your_surname}`.
 * Implement an interface in your package. You can commit your changes per implemented method or by implemented class. *But do not several class implementation into one commit.*
 * Before or after you made a commit, pull changes from `master` branch. This is a required step.
 
@@ -27,7 +27,7 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 
 > ##### Where I should start?
 >
-> Check `team.asd.services.IsConverterService`. It's a good point to start. Create a class in your own package with name `ConverterService` and try to implement all methods from the interface. Then check your implementation with requirements (javadocs) and make first commit. Push your changes and try to make a PR.
+> Check `team.asd.service.IsConverterService`. It's a good point to start. Create a class in your own package with name `ConverterService` and try to implement all methods from the interface. Then check your implementation with requirements (javadocs) and make first commit. Push your changes and try to make a PR.
 
 ### Pull requests ###
 
