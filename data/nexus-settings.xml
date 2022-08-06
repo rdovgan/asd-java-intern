@@ -1,0 +1,14 @@
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+		  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+	<servers>
+		<server>
+			<!-- this id should match the id of the repo server in pom.xml -->
+			<id>asd-nexus</id>
+			<username>pipeline</username>
+			<password>testP@ssword</password>
+		</server>
+	</servers>
+</settings>
