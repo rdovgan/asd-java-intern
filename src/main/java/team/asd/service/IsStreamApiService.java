@@ -81,4 +81,13 @@ public interface IsStreamApiService {
 	@NonNull
 	Stream<LocalDate> skipDaysFromSpecifiedDate(List<LocalDate> listOfDates, LocalDate date, Integer daysToSkip);
 
+	/**
+	 * Collect all provided lists into one that contains all the objects in the same iteration order
+	 *
+	 * @param lists of the same objects
+	 * @return list with all items
+	 */
+	@NonNull
+	List<? extends Object> collectLists(List<? extends Object> ... lists);
+
 }

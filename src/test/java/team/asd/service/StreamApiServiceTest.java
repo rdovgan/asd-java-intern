@@ -206,6 +206,21 @@ public class StreamApiServiceTest {
 		assertEquals(3, streamApiService.skipDaysFromSpecifiedDate(dates, LocalDate.now(), 0).count());
 	}
 
+	@ParameterizedTest
+	@MethodSource("defineStreamApiServices")
+	public void testCollectLists(IsStreamApiService streamApiService) {
+		assertEquals(0, streamApiService.collectLists().size());
+		List<Integer> firstList = Arrays.asList(1, 2, 3);
+		assertEquals(firstList.size(), streamApiService.collectLists(firstList).size());
+		List<Integer> secondList = Arrays.asList(2, 4, 5);
+		List<Integer> thirdList = Arrays.asList(5, 6, 7);
+		List<Integer> combinedList = new ArrayList<>(firstList);
+		combinedList.addAll(secondList);
+		assertEquals(3, streamApiService.collectLists(firstList, secondList).lastIndexOf(2));
+		combinedList.addAll(thirdList);
+		assertEquals(combinedList.size(), streamApiService.collectLists(firstList, secondList, thirdList).size());
+	}
+
 	private static boolean isSorted(List<LocalDate> listOfStrings) {
 		return isSorted(listOfStrings, listOfStrings.size());
 	}
