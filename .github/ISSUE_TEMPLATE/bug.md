@@ -12,6 +12,7 @@ A clear and concise description of what the bug is.
 
 **How to reproduce**
 Steps to reproduce the issue:
+
 1. Checkout to branch ``
 2. Check `` service
 3. Call `` endpoint

@@ -1,6 +1,6 @@
 # README
 
-This project was designed for Internship process to help each intern to achieve certain skills with specific tools/technologies. 
+This project was designed for Internship process to help each intern to achieve certain skills with specific tools/technologies.
 
 ### What is this repository for?
 
@@ -20,16 +20,17 @@ Configure Code Style Scheme for IDEA with [template](data/idea-formatter.xml) in
 <br>
 Change default maven user setting file to [provided](data/nexus-settings.xml) in `/data` project folder to use Nexus repository
 
-
 ### Set up your repository
 
 #### Enable `Issues` feature
+
 * Go to your GitHub forked repository
 * Go to `Settings` tab
 * On `General` page, scroll down to `Features` block
 * Check `Issues` option
 
 #### Configure default issue Assignee
+
 * Go to your GitHub forked repository
 * Go to `Settings` tab
 * On `General` page, scroll down to `Features` block
@@ -39,6 +40,7 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 * Do the same with `Feature` template
 
 #### Set up your deployment
+
 * Go to your GitHub forked repository
 * Choose `Action` tab
 * Find `Java with Maven` configuration option and click `Configure`
@@ -46,6 +48,7 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 * Press `Start commit` and commit directly to the master branch
 
 #### Protect your `master` branch
+
 * Go to your GitHub forked repository
 * Choose `Settings` tab
 * Go to `Branches` item in `Code and automation` block
@@ -54,8 +57,8 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 * Check `Require a pull request before merging` option and `Dismiss stale pull request approvals when new commits are pushed` in the same block
 * Click `Create` at the page bottom
 
-
 ### Workflow
+
 * Get a ticket from your mentor
 * Create a working branch with template `implementation/{your_ticket}`
 * [Pull changes](#how-to-fetch-changes-from-parent-repositorys-specific-branch) from specific branch in parent repository (if provided)
@@ -65,31 +68,32 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 
 **All your changes should be committed only in your working branch. Do not use master branch for direct commits. Add your changes only by pull requests**
 
-
 ### Pull requests ###
+
 * After you fully-implement one of classes, you can create a Pull-request to check your implementation with JUnit tests.
 * Choose your working branch and `master` branch as target.
 * Add all mentors as a reviewers.
 * Wait for a build result or check email or Action tab in GitHub.
 * After at least one approval from mentor, you can merge your PR.
 
-
 ### How to fetch changes from parent repository's specific branch
+
 * Go to your GitHub forked repository
 * Choose `Pull requests` tab
 * Click `New pull request` button
-![Fetch branch from parent repository](data/pull_parent_branch.png?raw=true "Fetch branch from parent repository")
+  ![Fetch branch from parent repository](data/pull_parent_branch.png?raw=true "Fetch branch from parent repository")
 * Click `compare actoss forks` link (1)
 * Choose your repository and branch (not `master`) as a base and parent repository with specific branch as a head (2)
 * Create and merge a pull request (3)
 
-
 > ##### Where I should start?
-> Check `team.asd.service.IsConverterService`. It's a good point to start. Create a class in your own package with name `ConverterService` and try to implement all methods from the interface. Then check your implementation with requirements (javadocs) and make first commit. Push your changes and try to make a PR.
-
+> Check `team.asd.service.IsConverterService`. It's a good point to start. Create a class in your own package with name `ConverterService` and try to implement
+> all methods from the interface. Then check your implementation with requirements (javadocs) and make first commit. Push your changes and try to make a PR.
 
 ### Additional information ###
+
 * You should NOT change any interface.
-* No need to create own implementations for all interfaces at one. Do it step by step, class by class. Go ahead to the next interface implementation after tests will pass for the previous.
+* No need to create own implementations for all interfaces at one. Do it step by step, class by class. Go ahead to the next interface implementation after tests
+  will pass for the previous.
 * You can create own JUnit tests to check your services.
 * If you found a bug or misspells, please contact with your mentor.
