@@ -221,6 +221,21 @@ public class StreamApiServiceTest {
 		assertEquals(combinedList.size(), streamApiService.collectLists(firstList, secondList, thirdList).size());
 	}
 
+	@ParameterizedTest
+	@MethodSource("defineStreamApiServices")
+	public void testRemoveDuplicates(IsStreamApiService streamApiService) {
+		String letterA = "A", letterB = "B", group = "ABBA";
+		List<String> listWithDuplicates = Arrays.asList(letterA, letterB, letterA, letterA+letterB+letterB+letterA, group);
+		List<String> listWithoutDuplicates = Arrays.asList(letterA, letterB, group);
+		List<?> resultList = streamApiService.removeDuplicates(listWithDuplicates);
+		assertEquals(listWithoutDuplicates.size(), resultList.size());
+		assertTrue(resultList.contains(letterA));
+		assertTrue(resultList.contains(letterB));
+		assertTrue(resultList.contains(group));
+		assertTrue(CollectionUtils.isEmpty(streamApiService.removeDuplicates(null)));
+		assertNotNull(streamApiService.removeDuplicates(null));
+	}
+
 	private static boolean isSorted(List<LocalDate> listOfStrings) {
 		return isSorted(listOfStrings, listOfStrings.size());
 	}

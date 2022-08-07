@@ -90,4 +90,12 @@ public interface IsStreamApiService {
 	@NonNull
 	List<? extends Object> collectLists(List<? extends Object> ... lists);
 
+	/**
+	 * Return elements without duplicates. Not modifies the provided list
+	 *
+	 * @param listWithDuplicates list with elements
+	 * @return list without duplicates
+	 */
+	@NonNull
+	List<? extends Object> removeDuplicates(List<? extends Object> listWithDuplicates);
 }
