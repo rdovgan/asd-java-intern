@@ -10,7 +10,7 @@ This project was designed for Internship process to help each intern to achieve 
 
 ### How to set up project?
 
-Setup environment: Linux/MacOS, Java 8, Maven, GIT, IDEA
+Setup environment: Linux/MacOS, Java 11, Maven, GIT, IDEA
 <br>
 Fork [this](https://github.com/rdovgan/asd-java-intern) repository
 <br>
@@ -38,6 +38,7 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 * Select `Preview and edit` button for `Bug` template and click pencil button near the `Issue: Bug` template name
 * Scroll to the bottom of template to `Assignees` section and click `assign yourself` link or choose yourself from dropdown
 * Do the same with `Feature` template
+* Submit template by `Propose changes` button
 
 #### Set up your deployment
 
