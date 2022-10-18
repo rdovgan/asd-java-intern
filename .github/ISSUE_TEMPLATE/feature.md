@@ -2,8 +2,8 @@
 name: Feature
 about: Create a feature
 title: "[FEATURE]"
-labels: feature
-assignees: ''
+labels: ''
+assignees: olena-syrotenko
 
 ---
 
