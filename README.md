@@ -53,15 +53,15 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 * Go to your GitHub forked repository
 * Choose `Settings` tab
 * Go to `Branches` item in `Code and automation` block
-* Add branch protection rule by clicking button `Add branch protection rule`
-* Set branch name patter as `master`
+* Add branch protection rule by clicking button `Add rule`
+* Set branch name pattern as `master`
 * Check `Require a pull request before merging` option and `Dismiss stale pull request approvals when new commits are pushed` in the same block
 * Click `Create` at the page bottom
 
 ### Workflow
 
 * Get a ticket from your mentor
-* Create a working branch with template `implementation/{your_ticket}`
+* Create a working branch with template `implementation/{ticket-id_ticket-name}` for [FEATURE] type and `fix/{ticket-id_ticket-name}` for [BUG] type
 * [Pull changes](#how-to-fetch-changes-from-parent-repositorys-specific-branch) from specific branch in parent repository (if provided)
 * Implement an interface in `service` package
 * Commit your changes per implemented method or by implemented class. *But do not combine several class implementation into one commit*
