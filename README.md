@@ -58,6 +58,14 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 * Check `Require a pull request before merging` option and `Dismiss stale pull request approvals when new commits are pushed` in the same block
 * Click `Create` at the page bottom
 
+#### Add all mentors as collaborators
+
+* Go to your GitHub forked repository
+* Choose `Settings` tab
+* Go to `Collaborators` item in `Access` block
+* Click `Add people` block and set your mentors usernames
+* Submit by clicking `Select a collaborator above`
+
 ### Workflow
 
 * Get a ticket from your mentor
