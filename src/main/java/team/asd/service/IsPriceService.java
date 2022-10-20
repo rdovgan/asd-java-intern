@@ -33,4 +33,5 @@ public interface IsPriceService {
 	@NonNull
 	BigDecimal defineAverageValueFromPrices(List<IsPrice> prices) throws WrongPriceException;
 
+	IsPrice definePriceObject();
 }
