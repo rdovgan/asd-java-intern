@@ -67,7 +67,6 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 * Submit by clicking `Select a collaborator above`
 
 ### Workflow
-
 * Get a ticket from your mentor
 * Create a working branch with template `implementation/{ticket-id_ticket-name}` for [FEATURE] type and `fix/{ticket-id_ticket-name}` for [BUG] type
 * [Pull changes](#how-to-fetch-changes-from-parent-repositorys-specific-branch) from specific branch in parent repository (if provided)
@@ -78,7 +77,6 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 **All your changes should be committed only in your working branch. Do not use master branch for direct commits. Add your changes only by pull requests**
 
 ### Pull requests ###
-
 * After you fully-implement one of classes, you can create a Pull-request to check your implementation with JUnit tests.
 * Choose your working branch and `master` branch as target.
 * Add all mentors as a reviewers.
@@ -86,7 +84,6 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 * After at least one approval from mentor, you can merge your PR.
 
 ### How to fetch changes from parent repository's specific branch
-
 * Go to your GitHub forked repository
 * Choose `Pull requests` tab
 * Click `New pull request` button
@@ -100,7 +97,6 @@ Change default maven user setting file to [provided](data/nexus-settings.xml) in
 > all methods from the interface. Then check your implementation with requirements (javadocs) and make first commit. Push your changes and try to make a PR.
 
 ### Additional information ###
-
 * You should NOT change any interface.
 * No need to create own implementations for all interfaces at one. Do it step by step, class by class. Go ahead to the next interface implementation after tests
   will pass for the previous.
