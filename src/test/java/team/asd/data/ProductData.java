@@ -31,9 +31,12 @@ public class ProductData {
 	}
 
 	public static List<IsProduct> defineProductList(Integer limit) {
+		int limitForProducts;
 		if (limit == null || limit < 1) {
-			limit = 1;
+			limitForProducts = 1;
+		} else {
+			limitForProducts = limit;
 		}
-		return Stream.generate(ProductData::defineDefaultProduct).limit(limit).collect(Collectors.toList());
+		return Stream.generate(ProductData::defineDefaultProduct).limit(limitForProducts).collect(Collectors.toList());
 	}
 }
