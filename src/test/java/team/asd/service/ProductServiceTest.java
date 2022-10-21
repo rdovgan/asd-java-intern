@@ -98,7 +98,6 @@ public class ProductServiceTest {
 	@ParameterizedTest
 	@MethodSource("defineProductServices")
 	public void testCalculateProductCountByState(IsProductService productService) throws WrongProductException {
-		final int productStateCount = ProductState.values().length;
 		final int productCountWithCreatedState = 5;
 		final int productCountWithFinalState = 2;
 		final int productCountWithDeprecatedState = 8;
@@ -138,8 +137,6 @@ public class ProductServiceTest {
 	@ParameterizedTest
 	@MethodSource("defineProductServices")
 	public void testFilterProductsByProvidedObject(IsProductService productService) throws WrongProductException {
-		int productStateCount = ProductState.values().length;
-
 		final int productCountWithCreatedState = 5;
 		final int productCountWithFinalState = 9;
 		final int productCountWithDeprecatedState = 3;
