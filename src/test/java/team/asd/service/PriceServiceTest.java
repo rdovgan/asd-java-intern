@@ -53,14 +53,14 @@ public class PriceServiceTest {
 	@ParameterizedTest
 	@MethodSource("definePriceServices")
 	public void testDefineAverageValueFromPerDayPrice(IsPriceService priceService) throws WrongPriceException {
-		BigDecimal firstPriceAmount = new BigDecimal(199.95);
+		BigDecimal firstPriceAmount = new BigDecimal("199.95");
 		IsPerDayPrice firstPerDayPrice = PriceData.definePerDayPrice(LocalDate.now(), firstPriceAmount);
 
-		BigDecimal secondPriceAmount = new BigDecimal(800.02);
+		BigDecimal secondPriceAmount = new BigDecimal("800.02");
 		IsPerDayPrice secondPerDayPrice = PriceData.definePerDayPrice(LocalDate.now()
 				.plusYears(1), secondPriceAmount);
 
-		BigDecimal thirdPriceAmount = new BigDecimal(500.03);
+		BigDecimal thirdPriceAmount = new BigDecimal("500.03");
 		IsPerDayPrice thirdPerDayPrice = PriceData.definePerDayPrice(LocalDate.now()
 				.plusDays(2), thirdPriceAmount);
 
@@ -69,21 +69,21 @@ public class PriceServiceTest {
 				.divide(new BigDecimal(3), RoundingMode.HALF_DOWN);
 
 		List<IsPerDayPrice> perDayPriceList = Arrays.asList(firstPerDayPrice, secondPerDayPrice, thirdPerDayPrice);
-		assertEquals(averagePriceAmountPerDays.setScale(2, BigDecimal.ROUND_HALF_UP), priceService.defineAverageValueFromPerDayPrice(perDayPriceList)
+		assertEquals(averagePriceAmountPerDays.setScale(2, RoundingMode.HALF_UP), priceService.defineAverageValueFromPerDayPrice(perDayPriceList)
 				.setScale(2, RoundingMode.HALF_UP), "Average per day price amount calculated incorrectly");
 	}
 
 	@ParameterizedTest
 	@MethodSource("definePriceServices")
 	public void testDefineAverageValueFromPerDayPriceWithEqualsDates(IsPriceService priceService) throws WrongPriceException {
-		BigDecimal firstPriceAmount = new BigDecimal(45.94);
+		BigDecimal firstPriceAmount = new BigDecimal("45.94");
 		IsPerDayPrice firstPerDayPrice = PriceData.definePerDayPrice(LocalDate.now(), firstPriceAmount);
 
-		BigDecimal secondPriceAmount = new BigDecimal(98.02);
+		BigDecimal secondPriceAmount = new BigDecimal("98.02");
 		IsPerDayPrice secondPerDayPrice = PriceData.definePerDayPrice(LocalDate.now()
 				.plusYears(1), secondPriceAmount);
 
-		BigDecimal thirdPriceAmount = new BigDecimal(131.43);
+		BigDecimal thirdPriceAmount = new BigDecimal("131.43");
 		IsPerDayPrice thirdPerDayPrice = PriceData.definePerDayPrice(LocalDate.now(), thirdPriceAmount);
 
 		BigDecimal averagePriceAmountPerDays = firstPriceAmount.add(secondPriceAmount)
