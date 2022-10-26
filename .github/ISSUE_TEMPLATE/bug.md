@@ -3,7 +3,7 @@ name: Bug
 about: Create a bug issue
 title: "[FIX]"
 labels: bug
-assignees: ''
+assignees: olena-syrotenko
 
 ---
 
