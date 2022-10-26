@@ -33,12 +33,12 @@ public class CollectionServiceTest {
 	@MethodSource("defineServices")
 	void testRetrieveObjectsThatPresentInBothLists(IsCollectionService collectionService) {
 		assertNotNull(collectionService.retrieveObjectsThatPresentInBothLists(null, null));
-		assertEquals(0, collectionService.retrieveObjectsThatPresentInBothLists(new HashSet<>(listWIthStrings), null).size());
-		assertEquals(0, collectionService.retrieveObjectsThatPresentInBothLists(null, new HashSet<>(listWIthStrings)).size());
-		assertEquals(new HashSet<>(listWIthStrings),
-				collectionService.retrieveObjectsThatPresentInBothLists(new HashSet<>(listWIthStrings), new HashSet<>(listWIthStrings)));
+		assertEquals(0, collectionService.retrieveObjectsThatPresentInBothLists(Set.copyOf(listWIthStrings), null).size());
+		assertEquals(0, collectionService.retrieveObjectsThatPresentInBothLists(null, Set.copyOf(listWIthStrings)).size());
+		assertEquals(Set.copyOf(listWIthStrings),
+				collectionService.retrieveObjectsThatPresentInBothLists(Set.copyOf(listWIthStrings), Set.copyOf(listWIthStrings)));
 		assertEquals(Set.of("A", "CCC"),
-				collectionService.retrieveObjectsThatPresentInBothLists(new HashSet<>(listWIthStrings), new HashSet<>(listWIthDifferentObject)));
+				collectionService.retrieveObjectsThatPresentInBothLists(Set.copyOf(listWIthStrings), Set.copyOf(listWIthDifferentObject)));
 	}
 
 	@ParameterizedTest
