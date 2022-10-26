@@ -72,6 +72,7 @@ class CalendarServiceTest {
 
 		long secondsInDay = 60 * 60 * 24;
 		assertEquals(3 * secondsInDay, calendarService.defineCountInRange(LocalDate.now(), LocalDate.now().plusDays(3), ChronoUnit.SECONDS));
+		assertEquals(2 * secondsInDay / 60, calendarService.defineCountInRange(LocalDate.now(), LocalDate.now().plusDays(2), ChronoUnit.MINUTES));
 		assertEquals(1L, calendarService.defineCountInRange(LocalDate.now(), LocalDate.now().plusDays(7), ChronoUnit.WEEKS));
 		assertEquals(7L, calendarService.defineCountInRange(LocalDate.now(), LocalDate.now().plusDays(7), ChronoUnit.DAYS));
 	}
