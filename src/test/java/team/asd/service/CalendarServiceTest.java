@@ -115,5 +115,8 @@ class CalendarServiceTest {
 		assertThrows(DateTimeException.class, () -> calendarService.reformatToLocalDate("Apr 5th 2020"));
 		assertThrows(DateTimeException.class, () -> calendarService.reformatToLocalDate("10th May 2020T"));
 		assertEquals(LocalDate.of(2020, 5, 10), calendarService.reformatToLocalDate("10th May 2020"));
+		assertThrows(DateTimeException.class, () -> calendarService.reformatToLocalDate("10th"));
+		assertThrows(DateTimeException.class, () -> calendarService.reformatToLocalDate("10 20"));
+		assertThrows(DateTimeException.class, () -> calendarService.reformatToLocalDate("1 2 3"));
 	}
 }
