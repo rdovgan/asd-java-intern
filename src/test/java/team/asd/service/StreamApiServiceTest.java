@@ -139,6 +139,27 @@ public class StreamApiServiceTest {
 		assertTrue(convertedIntegerList.stream().allMatch(Objects::nonNull), "There should not be a null values in result list");
 	}
 
+	@ParameterizedTest
+	@MethodSource("defineStreamApiServices")
+	public void testConvertLongStringListToIntegerList(IsStreamApiService streamApiService) {
+		int correctValuesCount = 0;
+		List<String> stringList = List.of("329124942389234892348934289342892348923489234892348923489");
+		List<Integer> convertedIntegerList = streamApiService.convertStringListToIntegerList(stringList);
+		assertEquals(correctValuesCount, convertedIntegerList.size(), "Wrong size for converted list");
+		assertTrue(convertedIntegerList.stream().allMatch(Objects::nonNull), "There should not be a null values in result list");
+	}
+
+	@ParameterizedTest
+	@MethodSource("defineStreamApiServices")
+	public void testConvertStringListToIntegerWithZeros(IsStreamApiService streamApiService) {
+		int correctValuesCount = 1;
+		List<String> stringList = List.of("-00001");
+		List<Integer> convertedIntegerList = streamApiService.convertStringListToIntegerList(stringList);
+		assertEquals(correctValuesCount, convertedIntegerList.size(), "Wrong size for converted list");
+		assertTrue(convertedIntegerList.stream().allMatch(Objects::nonNull), "There should not be a null values in result list");
+	}
+
+
 	//IntStream convertStringToLegalChars(String value);
 
 	@ParameterizedTest
