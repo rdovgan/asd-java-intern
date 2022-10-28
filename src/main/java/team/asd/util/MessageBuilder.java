@@ -30,10 +30,8 @@ public class MessageBuilder {
 	}
 
 	public <T> MessageBuilder add(T value) {
-		if (value instanceof String) {
-			if (StringUtils.isBlank((String) value)) {
+		if (value instanceof String && StringUtils.isBlank((String) value)) {
 				return this;
-			}
 		}
 		if (value != null) {
 			addSpaceIfNeeded();
