@@ -82,6 +82,7 @@ public class StreamApiServiceTest {
 		List<Integer> resultList = streamApiService.defineListFromRange(null, null);
 		assertNotNull(resultList, "Result should be an empty list when null value was provided");
 		assertEquals(0, resultList.size(), "Result should be an empty list when null value was provided");
+		streamApiService.defineListFromRange(1, null);
 	}
 
 	@ParameterizedTest
