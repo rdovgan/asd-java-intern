@@ -4,7 +4,11 @@ import team.asd.dao.PartyDao;
 import team.asd.entity.Party;
 
 public class PartyService {
-	private static PartyDao partyDao;
+	private final PartyDao partyDao;
+
+	public PartyService(PartyDao partyDao) {
+		this.partyDao = partyDao;
+	}
 
 	public Party readById(Integer id) {
 		return partyDao.readById(id);
@@ -18,7 +22,7 @@ public class PartyService {
 		return partyDao.update(party, id);
 	}
 
-	public Party delete(Integer id) {
-		return partyDao.delete(id);
+	public void delete(Integer id) {
+		partyDao.deleteById(id);
 	}
 }

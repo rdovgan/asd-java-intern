@@ -3,11 +3,11 @@ package team.asd.dao;
 import team.asd.entity.Party;
 
 public interface PartyDao {
-	Party readById(int id);
+	Party readById(Integer id);
 
 	Party create(Party party);
 
-	Party update(Party party, int id);
+	Party update(Party party, Integer id);
 
-	Party delete(int id);
+	void deleteById(Integer id);
 }
