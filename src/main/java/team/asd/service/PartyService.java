@@ -18,8 +18,8 @@ public class PartyService {
 		return partyDao.create(party);
 	}
 
-	public Party update(Party party, Integer id) {
-		return partyDao.update(party, id);
+	public Party update(Party party) {
+		return partyDao.update(party);
 	}
 
 	public void delete(Integer id) {

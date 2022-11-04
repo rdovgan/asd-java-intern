@@ -17,6 +17,9 @@ public class Party {
 	private UserType userType;
 	private LocalDateTime version;
 
+	public Party() {
+	}
+
 	public Party(Integer id, String name, PartyState state, String postalAddress, String emailAddress, String mobilePhone, String password, String currency,
 			UserType userType, LocalDateTime version) {
 		this.id = id;

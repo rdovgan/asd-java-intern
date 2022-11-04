@@ -7,7 +7,7 @@ public interface PartyDao {
 
 	Party create(Party party);
 
-	Party update(Party party, Integer id);
+	Party update(Party party);
 
 	void deleteById(Integer id);
 }
