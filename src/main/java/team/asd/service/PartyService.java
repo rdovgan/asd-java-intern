@@ -14,12 +14,12 @@ public class PartyService {
 		return partyDao.readById(id);
 	}
 
-	public Party create(Party party) {
-		return partyDao.create(party);
+	public void create(Party party) {
+		partyDao.create(party);
 	}
 
-	public Party update(Party party) {
-		return partyDao.update(party);
+	public void update(Party party) {
+		partyDao.update(party);
 	}
 
 	public void delete(Integer id) {
