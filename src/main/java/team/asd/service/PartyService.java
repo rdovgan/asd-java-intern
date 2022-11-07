@@ -13,7 +13,7 @@ public class PartyService {
 	}
 
 	public Party readById(Integer id) throws ValidationException {
-		if (id == null || id <= 0) {
+		if (isWrongId(id)) {
 			throw new ValidationException("Wrong id was provided");
 		}
 		return partyDao.readById(id);
@@ -27,16 +27,20 @@ public class PartyService {
 	}
 
 	public void update(Party party) throws ValidationException {
-		if (party == null || party.getId() == null || party.getId() <= 0) {
+		if (party == null || isWrongId(party.getId())) {
 			throw new ValidationException("Wrong Party object was provided");
 		}
 		partyDao.update(party);
 	}
 
 	public void delete(Integer id) throws ValidationException {
-		if (id == null || id <= 0) {
+		if (isWrongId(id)) {
 			throw new ValidationException("Wrong id was provided");
 		}
 		partyDao.deleteById(id);
+	}
+
+	private boolean isWrongId(Integer id){
+		return id == null || id <= 0;
 	}
 }
