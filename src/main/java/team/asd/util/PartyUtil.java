@@ -59,7 +59,7 @@ public class PartyUtil {
 	}
 
 	public static String convertPartyStateIntoString(PartyState partyState) {
-		return partyState == null ? null : partyState.name();
+		return partyState == null ? PartyState.Initial.name() : partyState.name();
 	}
 
 	public static String convertUserTypeIntoString(UserType userType) {
