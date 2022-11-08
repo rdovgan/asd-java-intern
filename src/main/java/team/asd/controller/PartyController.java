@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import team.asd.dto.PartyDto;
 import team.asd.entity.Party;
@@ -21,6 +22,7 @@ public class PartyController {
 	private final PartyService partyService = new PartyService(null);
 
 	@GetMapping("/{id}")
+	@ResponseBody
 	public ResponseEntity<Object> getPartyById(@PathVariable Integer id) {
 		try {
 			return new ResponseEntity<>(PartyUtil.convertToDto(partyService.readById(id)), HttpStatus.OK);
@@ -30,6 +32,7 @@ public class PartyController {
 	}
 
 	@PostMapping("/")
+	@ResponseBody
 	public ResponseEntity<Object> createParty(@RequestBody PartyDto partyDto) {
 		try {
 			Party party = PartyUtil.convertToEntity(partyDto);
@@ -41,6 +44,7 @@ public class PartyController {
 	}
 
 	@PutMapping("/")
+	@ResponseBody
 	public ResponseEntity<Object> updateParty(@RequestBody PartyDto partyDto) {
 		try {
 			Party party = PartyUtil.convertToEntity(partyDto);
@@ -52,6 +56,7 @@ public class PartyController {
 	}
 
 	@DeleteMapping("/{id}")
+	@ResponseBody
 	public ResponseEntity<Object> deleteParty(@PathVariable Integer id) {
 		try {
 			partyService.delete(id);
