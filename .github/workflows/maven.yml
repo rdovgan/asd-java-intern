@@ -27,8 +27,12 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+        
+    - name: Build with Maven 
+      env:
+        ENVIRONMENT_VALUE: v@lue
       run: mvn -B package --file pom.xml
+      
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
